@@ -7,17 +7,17 @@ canvas.height = document.documentElement.clientHeight;
 const centerX_canvas = canvas.width / 2;
 const centerY_canvas = canvas.height / 2;
 
-const background = new Image();
-background.src = "./assets/background.webp";
+const backgroundImage = new Image();
+backgroundImage.src = "./assets/background.webp";
 
 const plane = new Image();
 plane.src = "./assets/plane.webp";
 
-const back = new Back(background, 10);
+const background = new Background(backgroundImage, 10);
 
 const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  back.draw();
+  background.draw();
   requestAnimationFrame(gameLoop);
 };
 
