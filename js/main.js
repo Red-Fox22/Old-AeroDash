@@ -10,14 +10,18 @@ const centerY_canvas = canvas.height / 2;
 const backgroundImage = new Image();
 backgroundImage.src = "./assets/background.webp";
 
+const sunImage = new Image();
+sunImage.src = "./assets/sun.png";
+
 const planeImage = new Image();
 planeImage.src = "./assets/plane.webp";
 
 const speed = 10;
 
-const background = new Background(backgroundImage, speed);
-const planeObj = new Plane(planeImage, speed);
+const background = new Background(speed);
+const planeObj = new Plane(speed);
 
+let i = 0;
 const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -29,7 +33,14 @@ const gameLoop = () => {
 };
 
 window.addEventListener("mousemove", (event) => {
-  planeObj.move(event.clientY);
+  let mousePos = event.clientY;
+  if (mousePos > canvas.height - 100) {
+    mousePos = canvas.height - 100;
+  } else if (mousePos <= 50) {
+    mousePos = 50;
+  }
+
+  planeObj.move(mousePos);
 });
 
 gameLoop();

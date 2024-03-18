@@ -1,6 +1,5 @@
 class Plane {
-  constructor(img, speed) {
-    this.img = img;
+  constructor(speed) {
     this.speed = speed;
 
     this.plane = {
@@ -14,7 +13,7 @@ class Plane {
 
   draw() {
     ctx.drawImage(
-      this.img,
+      planeImage,
       this.plane.x,
       this.plane.y,
       this.plane.width,
@@ -24,9 +23,9 @@ class Plane {
 
   updatePosition() {
     if (this.plane.targetY > this.plane.y + this.speed) {
-      this.plane.y += (this.plane.targetY % this.plane.y) / 10;
+      this.plane.y += (this.plane.targetY % this.plane.y) / 5;
     } else if (this.plane.targetY < this.plane.y - this.speed) {
-      this.plane.y -= (this.plane.y % this.plane.targetY) / 10;
+      this.plane.y -= (this.plane.y % this.plane.targetY) / 5;
     }
   }
 
