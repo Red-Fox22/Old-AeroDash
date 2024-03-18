@@ -36,3 +36,31 @@ function main(){
 }
 
 setInterval(main,10)
+
+function start(){
+
+}
+
+function game_over(){
+    
+}
+
+function nuvem(){
+
+}
+
+function vida(){
+    
+}
+function colisão(){
+    
+}
+function passaro(){
+    
+}
+function avioes(){
+    
+}
+function pontos(){
+    
+}
