@@ -10,10 +10,13 @@ const centerY_canvas = canvas.height / 2;
 const backgroundImage = new Image();
 backgroundImage.src = "./assets/background.webp";
 
-const plane = new Image();
-plane.src = "./assets/plane.webp";
+const planeImage = new Image();
+planeImage.src = "./assets/plane.webp";
 
-const background = new Background(backgroundImage, 10);
+const speed = 10;
+
+const background = new Background(backgroundImage, speed);
+const planeObj = new Plane(planeImage, speed);
 
 const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
