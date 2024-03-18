@@ -4,10 +4,10 @@ class Plane {
     this.speed = speed;
     
     this.plane = {
-      width: 300,
-      height: 150,
-      initialX: centerX_canvas - plane.width / 2,
-      initialY: centerY_canvas - plane.height / 2,
+      width: 175,
+      height: 50,
+      initialX: 150,
+      initialY: centerY_canvas - 150 / 2,
     };
   }
 

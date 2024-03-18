@@ -21,6 +21,7 @@ const planeObj = new Plane(planeImage, speed);
 const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   background.draw();
+  planeObj.draw();
   requestAnimationFrame(gameLoop);
 };
 
