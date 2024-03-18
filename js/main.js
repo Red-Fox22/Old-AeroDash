@@ -34,12 +34,12 @@ const gameLoop = () => {
 
 window.addEventListener("mousemove", (event) => {
   let mousePos = event.clientY;
+
   if (mousePos > canvas.height - 100) {
     mousePos = canvas.height - 100;
   } else if (mousePos <= 50) {
     mousePos = 50;
   }
-
   planeObj.move(mousePos);
 });
 

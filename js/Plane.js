@@ -23,9 +23,9 @@ class Plane {
 
   updatePosition() {
     if (this.plane.targetY > this.plane.y + this.speed) {
-      this.plane.y += (this.plane.targetY % this.plane.y) / 5;
+      this.plane.y += Math.ceil((this.plane.targetY % this.plane.y) / 5);
     } else if (this.plane.targetY < this.plane.y - this.speed) {
-      this.plane.y -= (this.plane.y % this.plane.targetY) / 5;
+      this.plane.y -= Math.ceil((this.plane.y % this.plane.targetY) / 5);
     }
   }
 
