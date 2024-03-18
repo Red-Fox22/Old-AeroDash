@@ -21,14 +21,11 @@ const speed = 10;
 const background = new Background(speed);
 const planeObj = new Plane(speed);
 
-let i = 0;
 const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   background.draw();
   planeObj.updatePosition();
   planeObj.draw();
-
   requestAnimationFrame(gameLoop);
 };
 
