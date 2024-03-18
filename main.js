@@ -20,3 +20,5 @@ const gameLoop = () => {
   back.draw();
   requestAnimationFrame(gameLoop);
 };
+
+gameLoop();
