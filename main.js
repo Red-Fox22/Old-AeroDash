@@ -1,38 +1,24 @@
-let des = document.getElementById('des').getContext('2d')
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
 
-let aviao = new Aviao
-let aviao1  = new Avioes
-let aviao2  = new Avioes
+canvas.width = document.documentElement.clientWidth;
+canvas.height = document.documentElement.clientHeight;
 
-let t1 = new Text()
-let t2 = new Text()
+const centerX_canvas = canvas.width / 2;
+const centerY_canvas = canvas.height / 2;
 
-document.addEventListener('keydown',(e)=>{
-    // console.log(e.key)
-    if(e.key === 'a'){
-        aviao.dir -= 40
-    }else if(e.key === 'd'){
-        aviao.dir += 40
-    }
-})
-document.addEventListener('keyup', (e)=>{
-    if(e.key === 'a'){
-        aviao.dir = 0
-    }else if(e.key === 'd'){
-        aviao.dir = 0
-    }
-})
+const background = new Image();
+background.src = './assets/background.webp';
 
-function desenha(){
+const plane = new Image();
+plane.src = './assets/plane.webp';
 
-}
-function atualiza(){
+const back = new Back(background, 10);
 
-}
-function main(){
-    des.clearRect(0,0,500,700)
-    desenha()
-    atualiza()
+const gameLoop = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  back.draw();
+  requestAnimationFrame(gameLoop);
 }
 
-setInterval(main,10)
+gameLoop();

@@ -1,56 +1,18 @@
-class Obj{
+class Back {
+  constructor(img, speed) {
+    this.img = img;
+    this.speed = speed;
+    this.xPos = 0;
+  }
 
-    des_obj(){
+  draw() {
+    ctx.drawImage(this.img, this.xPos, 0, canvas.width, canvas.height);
+    ctx.drawImage(this.img, this.xPos + canvas.width, 0, canvas.width, canvas.height);
 
+    this.xPos -= this.speed;
+
+    if (this.xPos <= -canvas.width) {
+      this.xPos = 0;
     }
-}
-class Aviao{
-
-}
-
-class Aviao extends Obj{
-    des_aviao(){
-
-    }
-
-    atual_aviao(){
-    }
-}
-
-//Obstáculos
-
-class Nuvem extends Obj{
-    atual_nuvem(){
-    
-    }recomeca(){
-
-    }
-
-    } 
-
-class Predio extends Obj{
-    atual_predio(){
-        
-    }recomeca(){
-    
-    }
-} 
-class Avioes extends Obj{
-    atual_avioes(){
-        
-    }recomeca(){
-    
-    }
-} 
-
-class Passaros extends Obj{
-    atual_passaros(){
-        
-    }recomeca(){
-    
-    }
-} 
-
-class Text{
-
+  }
 }
