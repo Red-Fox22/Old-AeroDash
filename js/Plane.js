@@ -6,7 +6,7 @@ class Plane {
       width: 175,
       height: 50,
       x: 150,
-      y: centerY_canvas - 150 / 2,
+      y: centerY_canvas - 50 / 2,
       targetY: centerY_canvas - 150 / 2,
     };
   }
