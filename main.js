@@ -7,6 +7,10 @@ let aviao2  = new Avioes
 let t1 = new Text()
 let t2 = new Text()
 
+let motor = new Audio('./assets/motor.wav')
+let batida = new Audio('./assets/batida.mp3')
+let fundo = new Audio('./assets/fundo.mp3')
+
 document.addEventListener('keydown',(e)=>{
     // console.log(e.key)
     if(e.key === 'a'){
