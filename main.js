@@ -1,70 +1,40 @@
-let des = document.getElementById('des').getContext('2d')
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
 
-let aviao = new Aviao
-let aviao1  = new Avioes
-let aviao2  = new Avioes
+canvas.width = document.documentElement.clientWidth;
+canvas.height = document.documentElement.clientHeight;
 
-let t1 = new Text()
-let t2 = new Text()
+const centerX_canvas = canvas.width / 2;
+const centerY_canvas = canvas.height / 2;
 
-let motor = new Audio('./assets/motor.wav')
-let batida = new Audio('./assets/batida.mp3')
-let fundo = new Audio('./assets/fundo.mp3')
+const backgroundImage = new Image();
+backgroundImage.src = "./assets/background.webp";
 
-document.addEventListener('keydown',(e)=>{
-    // console.log(e.key)
-    if(e.key === 'a'){
-        aviao.dir -= 40
-    }else if(e.key === 'd'){
-        aviao.dir += 40
-    }
-})
-document.addEventListener('keyup', (e)=>{
-    if(e.key === 'a'){
-        aviao.dir = 0
-    }else if(e.key === 'd'){
-        aviao.dir = 0
-    }
-})
+const planeImage = new Image();
+planeImage.src = "./assets/plane.webp";
 
-function desenha(){
+const speed = 12.5;
 
-}
-function atualiza(){
+const background = new Background(speed);
+const planeObj = new Plane(speed);
 
-}
-function main(){
-    des.clearRect(0,0,500,700)
-    desenha()
-    atualiza()
-}
+const gameLoop = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  background.draw();
+  planeObj.updatePosition();
+  planeObj.draw();
+  requestAnimationFrame(gameLoop);
+};
 
-setInterval(main,10)
+window.addEventListener("mousemove", (event) => {
+  let mousePos = event.clientY;
 
-function start(){
+  if (mousePos > canvas.height - 100) {
+    mousePos = canvas.height - 100;
+  } else if (mousePos <= 50) {
+    mousePos = 50;
+  }
+  planeObj.move(mousePos);
+});
 
-}
-
-function game_over(){
-    
-}
-
-function nuvem(){
-
-}
-
-function vida(){
-    
-}
-function colisão(){
-    
-}
-function passaro(){
-    
-}
-function avioes(){
-    
-}
-function pontos(){
-    
-}
+gameLoop();
