@@ -68,4 +68,7 @@ class Plane {
   teste(){
     
   }
+  funcao_guilherme(){
+    //programa do guilherme
+  }
 }
