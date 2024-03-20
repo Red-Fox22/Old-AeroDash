@@ -62,4 +62,10 @@ class Plane {
       this.plane.targetY = mouseY;
     }
   }
+
+  // programando o codigo principal no main
+
+  teste(){
+    
+  }
 }
