@@ -66,6 +66,10 @@ class Plane {
   // programando o codigo principal no main
 
   teste(){
+
+  }
+
+  teste_ester(){
     
   }
 }
