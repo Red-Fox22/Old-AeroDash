@@ -10,13 +10,10 @@ const centerY_canvas = canvas.height / 2;
 const backgroundImage = new Image();
 backgroundImage.src = "./assets/background.webp";
 
-const sunImage = new Image();
-sunImage.src = "./assets/sun.png";
-
 const planeImage = new Image();
 planeImage.src = "./assets/plane.webp";
 
-const speed = 10;
+const speed = 12.5;
 
 const background = new Background(speed);
 const planeObj = new Plane(speed);
